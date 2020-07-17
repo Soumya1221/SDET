@@ -18,7 +18,7 @@ Feature: This feature is to automate the Elearning page
   Scenario: Take me to Session page
     Given I open the Session List link
     Then I Click on Add a training session icon
-    Then I Enter valid credentials in Session name textbox "selenium training session 73"
+    Then I Enter valid credentials in Session name textbox "selenium training session"
     And select created in sessions category list box "Testing"
     
   @GotoCourseSelection

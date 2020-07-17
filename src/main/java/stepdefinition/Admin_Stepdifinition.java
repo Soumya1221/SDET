@@ -1,5 +1,7 @@
 package stepdefinition;
 
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,6 +17,7 @@ import cucumber.api.java.en.Then;
 public class Admin_Stepdifinition {
 
 	static WebDriver driver;
+	
 
 	@Given("^I open the browser and enter the url \"([^\"]*)\"$")
 	public void i_open_the_browser_and_enter_the_url(String url) throws Throwable {
@@ -74,7 +77,9 @@ public class Admin_Stepdifinition {
 
 	@Then("^I Enter valid credentials in Session name textbox \"([^\"]*)\"$")
 	public void i_Enter_valid_credentials_in_Session_name_textbox(String arg1) throws Throwable {
-	    driver.findElement(By.id("add_session_name")).sendKeys(arg1);
+		Random randomGenerator = new Random();  
+		int randomInt = randomGenerator.nextInt(1000); 
+	    driver.findElement(By.id("add_session_name")).sendKeys(arg1 +randomInt);
 	    driver.findElement(By.xpath(".//*[@id='select2-coach_username-container']/span")).click();
 	    driver.findElement(By.cssSelector("input[type=search]")).sendKeys("Roshan");
 //	    driver.findElement(By.cssSelector("input[type=search]")).sendKeys(Keys.ENTER);
